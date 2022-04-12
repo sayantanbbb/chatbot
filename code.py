@@ -34,7 +34,7 @@ def train():
     return m
 model=train()  
 def predict(x):
-    return model.predict(x) 
+    return model.predict(x)[0]
 
 import requests
 #set title in streamlit
