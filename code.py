@@ -1,7 +1,7 @@
 import json
 import numpy as np
 from sentence_transformers import SentenceTransformer 
-from tqdm import tqdm
+
 from scipy.spatial.distance import cdist
 import streamlit as st
 import random
@@ -16,7 +16,7 @@ class Model():
         self.model=SentenceTransformer('all-MiniLM-L6-v2') 
     def train(self):
         print("Generating features this may take a few moments depending on how big the intents file is")
-        self.encodings=np.array(list(map(self.model.encode,tqdm(list(self.intents.keys())))))
+        self.encodings=np.array(list(map(self.model.encode,list(self.intents.keys()))))
         print("features were successfully generated")
     
     def predict(self,input):
