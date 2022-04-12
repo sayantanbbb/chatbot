@@ -1,0 +1,7 @@
+numpy
+sentence_transformers
+scipy
+streamlit
+requests
+google
+quote
